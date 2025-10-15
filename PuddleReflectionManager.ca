@@ -1,0 +1,19 @@
+using UnityEngine;
+
+public class PuddleReflectionManager : MonoBehaviour
+{
+    public Camera reflectionCamera;
+    public RenderTexture reflectionTexture;
+    public float updateInterval = 0.25f;
+    float timer = 0f;
+
+    void Start()
+    {
+        if (reflectionCamera && reflectionTexture)
+            reflectionCamera.targetTexture = reflectionTexture;
+    }
+
+    void Update()
+    {
+        timer -= Time.deltaTime;
+        if (timer
